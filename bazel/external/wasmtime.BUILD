@@ -9,6 +9,7 @@ rust_library(
     proc_macro_deps = [
             "@proxy_wasm_cpp_host//bazel/cargo:wasmtime_c_api_macros",
     ],
+    crate_features = ["jitdump", "wat", "cache"],
     crate_type = "staticlib",
     deps = [
         "@proxy_wasm_cpp_host//bazel/cargo:env_logger",
@@ -16,7 +17,6 @@ rust_library(
         "@proxy_wasm_cpp_host//bazel/cargo:once_cell",
         "@proxy_wasm_cpp_host//bazel/cargo:wasmtime",
         "@proxy_wasm_cpp_host//bazel/cargo:wat",
-        "@proxy_wasm_cpp_host//bazel/cargo:indexmap",
         ":helpers_lib",
     ],
 )
