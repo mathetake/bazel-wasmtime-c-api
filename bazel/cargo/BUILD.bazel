@@ -31,6 +31,24 @@ alias(
 )
 
 alias(
+    name = "indexmap",
+    actual = "@raze__indexmap__1_1_0//:indexmap",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
+    name = "object",
+    actual = "@raze__object__0_21_1//:object",
+    tags = [
+        "cargo-raze",
+        "manual",
+    ],
+)
+
+alias(
     name = "once_cell",
     actual = "@raze__once_cell__1_4_1//:once_cell",
     tags = [

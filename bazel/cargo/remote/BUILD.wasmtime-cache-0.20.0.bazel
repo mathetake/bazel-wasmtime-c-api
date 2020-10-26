@@ -39,7 +39,7 @@ rust_library(
     },
     crate_features = [
     ],
-    crate_root = "src/lib.rs",
+    crate_root = "crates/cache/src/lib.rs",
     crate_type = "lib",
     edition = "2018",
     rustc_flags = [
@@ -83,7 +83,7 @@ rust_library(
             "@io_bazel_rules_rust//rust/platform:x86_64-unknown-linux-gnu",
         ): [
             "@raze__errno__0_2_7//:errno",
-            "@raze__libc__0_2_79//:libc",
+            "@raze__libc__0_2_80//:libc",
         ],
         "//conditions:default": [],
     }) + selects.with_or({

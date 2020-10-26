@@ -1,4 +1,4 @@
-workspace(name = "proxy_wasm_rust_sdk")
+workspace(name = "proxy_wasm_cpp_host")
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
@@ -37,3 +37,19 @@ bazel_version(name = "bazel_version")
 load("//bazel/cargo:crates.bzl", "raze_fetch_remote_crates")
 
 raze_fetch_remote_crates()
+
+http_archive(
+    name = "wasmtime",
+    build_file = "//bazel/external:wasmtime.BUILD",
+    strip_prefix = "wasmtime-0.20.0",
+    sha256 = "feb29c96e053d16fe3dc91b93d7a28ab24b9c390fbdf2580547ae7fa0b8eae95",
+    url = "https://github.com/bytecodealliance/wasmtime/archive/v0.20.0.tar.gz",
+)
+
+http_archive(
+    name = "wasm-c-api",
+    build_file = "//bazel/external:wasm-c-api.BUILD",
+    strip_prefix = "wasm-c-api-d9a80099d496b5cdba6f3fe8fc77586e0e505ddc",
+    sha256 = "aea8cd095e9937f1e14f2c93e026317b197eb2345e7a817fe3932062eb7b792c",
+    url = "https://github.com/WebAssembly/wasm-c-api/archive/d9a80099d496b5cdba6f3fe8fc77586e0e505ddc.tar.gz",
+)

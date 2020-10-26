@@ -69,7 +69,7 @@ rust_library(
     # buildifier: leave-alone
     deps = [
         "@raze__crc32fast__1_2_1//:crc32fast",
-        "@raze__indexmap__1_6_0//:indexmap",
+        "@raze__indexmap__1_1_0//:indexmap",
         "@raze__wasmparser__0_57_0//:wasmparser",
     ],
 )
