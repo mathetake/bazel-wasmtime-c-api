@@ -65,9 +65,7 @@ additional_flags = [
 
 [raze.crates.scroll.'0.10.2']
 features = ["read", "write"]
-patches = ["//bazel/patches:scroll-0.10.2-remove_doc_requirement.diff"]
-patch_args = ["-p1"]
-
+data_attr = "[\"README.md\"]"
 
 [raze.crates.raw-cpuid.'7.0.3']
 gen_buildrs = true
