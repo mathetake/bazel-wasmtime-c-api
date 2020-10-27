@@ -9,14 +9,13 @@ rust_library(
     proc_macro_deps = [
             "@proxy_wasm_cpp_host//bazel/cargo:wasmtime_c_api_macros",
     ],
-    crate_features = ["jitdump", "wat", "cache"],
+    crate_features = ["jitdump", "cache"],
     crate_type = "staticlib",
     deps = [
         "@proxy_wasm_cpp_host//bazel/cargo:env_logger",
         "@proxy_wasm_cpp_host//bazel/cargo:anyhow",
         "@proxy_wasm_cpp_host//bazel/cargo:once_cell",
         "@proxy_wasm_cpp_host//bazel/cargo:wasmtime",
-        "@proxy_wasm_cpp_host//bazel/cargo:wat",
         ":helpers_lib",
     ],
 )
@@ -31,13 +30,10 @@ cc_library(
 cc_library(
     name = "c_api",
     hdrs = [
-        "crates/c-api/include/wasi.h",
-        "crates/c-api/include/wasmtime.h",
         "@wasm-c-api//:include/wasm.h",
     ],
     include_prefix = "wasmtime",
     includes = [
-        "crates/c-api/include/",
         "include/",
     ],
     deps = [
